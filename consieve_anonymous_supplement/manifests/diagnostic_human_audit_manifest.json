@@ -1,0 +1,98 @@
+{
+  "analysis_script": "${CONSIEVE_ROOT}/scripts/analyze_m2_human_audit.py",
+  "source_files": [
+    {
+      "path": "reports/m2_human_audit_annotations_normalized.json",
+      "sha256": "4cadd42dd504a435de1634afc95be571e84871b87406b4738bded8f34472ce17"
+    },
+    {
+      "path": "reports/m2_human_audit_uniform100_seed20260810_admin.json",
+      "sha256": "d712c788bbe742e6ec8afc860d5b2b5e9d4221a78d58a5176b3969e6f30fa845"
+    },
+    {
+      "path": "reports/m2_human_audit_submissions/adjudicator_C.csv",
+      "sha256": "ca43c45a5ee73e78b8e51bfd7b84fcb7beb4741228c48662a931e0e0bc60dc50"
+    },
+    {
+      "path": "reports/m2_human_audit_submissions/annotator_A.xlsx",
+      "sha256": "a0e0c22b40e68fcdfd461eaf7a3be2a967ede0cae9d8f9a692f1f700e85f1663"
+    },
+    {
+      "path": "reports/m2_human_audit_submissions/annotator_B.xlsx",
+      "sha256": "f51651f7e036c6066c27c494cacc96d87db6f4eb9cf820056bfe8e24cfa31a24"
+    }
+  ],
+  "label_normalization_events": [
+    {
+      "audit_id": "H002",
+      "field": "B_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H012",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H020",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H038",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H047",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H059",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H061",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H077",
+      "field": "A_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H084",
+      "field": "B_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    },
+    {
+      "audit_id": "H090",
+      "field": "B_Label",
+      "raw": "SUPPORT",
+      "normalized": "SUPPORTS",
+      "rule": "documented exact alias SUPPORT -> SUPPORTS"
+    }
+  ],
+  "frozen_artifacts_modified": false
+}

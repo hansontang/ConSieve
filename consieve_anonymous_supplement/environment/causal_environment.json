@@ -1,0 +1,16 @@
+{
+  "schema_version": "phase10_25_environment/1.0",
+  "created_at_utc": "2026-08-27T22:45:39.175366+00:00",
+  "host": "d157cf42a2c5",
+  "python": "3.10.12",
+  "repository_head": "560030e470b56961359fc7e1b0da18a0b212cbe6",
+  "formal_freeze_sha256": "2f72ae0ed5f7a9c0bb8b7ea92f251922cedbc430a684de99429d22062c3c3324",
+  "qwen_generator": "qwen-plus",
+  "qwen_context_tokenizer": "Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554",
+  "main1500_config": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/configs/main1500_frozen.yaml",
+  "main1500_config_sha256": "d60f2b27d8e998c79447cf4c0e99a216f02b5c88cf1a4be98645c2ba1c9e2a88",
+  "manuscript_modified": false,
+  "torch": "2.13.0+cu130",
+  "transformers": "4.57.6",
+  "cuda": "13.0"
+}

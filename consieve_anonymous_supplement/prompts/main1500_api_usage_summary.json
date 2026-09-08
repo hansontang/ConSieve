@@ -1,0 +1,607 @@
+{
+  "schema_version": "m5_api_usage_summary_v1",
+  "created_at_utc": "2026-08-15T11:51:14.755347+00:00",
+  "status": "pass",
+  "formal_qa_artifacts": 9,
+  "expected_formal_qa_artifacts": 9,
+  "api_attempt_events": 51061,
+  "retry_attempt_events": 25159,
+  "status_counts": {
+    "success": 25854,
+    "error": 25207
+  },
+  "stage_counts": {
+    "answer_generation": 26321,
+    "llm_as_a_judge": 24740
+  },
+  "by_model": {
+    "qwen-plus": {
+      "attempts": 51061,
+      "prompt_tokens": 53904825,
+      "completion_tokens": 98881,
+      "total_tokens": 54003706
+    }
+  },
+  "summed_concurrent_duration_ms": 39475259.41000007,
+  "runs": {
+    "reports/api_usage/m5_generation_m5_ds_modernbert_budget256": {
+      "requests": 2996,
+      "status": {
+        "success": 1499,
+        "error": 1497
+      },
+      "tokens": {
+        "prompt_tokens": 464230,
+        "completion_tokens": 8828,
+        "total_tokens": 473058
+      },
+      "requests_sha256": "4c62b77138ca3ee9682c152f142a361b619a3ebac15c6179e5a21c876ba0941a",
+      "metadata_sha256": "371d865b159984a2ce91357f4f3ef7d3a4f15303ce3b2f20b5828a4170d94b7f"
+    },
+    "reports/api_usage/m5_generation_m5_ds_modernbert_natural": {
+      "requests": 2996,
+      "status": {
+        "success": 1497,
+        "error": 1499
+      },
+      "tokens": {
+        "prompt_tokens": 2105502,
+        "completion_tokens": 9696,
+        "total_tokens": 2115198
+      },
+      "requests_sha256": "51ebe5400108ddd64e48f9d9bb50fce36de5c0c7147ce3f5bd5c428787cf666f",
+      "metadata_sha256": "59956ec4473ce1793745402f38a4776a214f9bc304226d8f2a500483dff6bc8b"
+    },
+    "reports/api_usage/m5_generation_m5_exit_budget256": {
+      "requests": 2996,
+      "status": {
+        "success": 1500,
+        "error": 1496
+      },
+      "tokens": {
+        "prompt_tokens": 464747,
+        "completion_tokens": 9627,
+        "total_tokens": 474374
+      },
+      "requests_sha256": "d2a7d4dae2aa345461ef14de9ffd5c335ffc4f53d7477da30f8f4bc2d51c7b44",
+      "metadata_sha256": "eb70c9c186ae6e62d0091e41ca73dd9e81ef4dd6400718a91856ea8b33192ac2"
+    },
+    "reports/api_usage/m5_generation_m5_exit_natural": {
+      "requests": 2996,
+      "status": {
+        "success": 1500,
+        "error": 1496
+      },
+      "tokens": {
+        "prompt_tokens": 706052,
+        "completion_tokens": 9326,
+        "total_tokens": 715378
+      },
+      "requests_sha256": "71f0e5e74eb319072307145f0e315a488d155f5fa5b106cba7c569d97453cbaa",
+      "metadata_sha256": "dd91446968e3c94ced15eb13c45ea07f6116a6e5590f962a33d0821cc91e2b50"
+    },
+    "reports/api_usage/m5_generation_m5_longllmlingua_budget256": {
+      "requests": 2995,
+      "status": {
+        "success": 1500,
+        "error": 1495
+      },
+      "tokens": {
+        "prompt_tokens": 491300,
+        "completion_tokens": 9259,
+        "total_tokens": 500559
+      },
+      "requests_sha256": "c31cce88b8a37bc8e205ffd371598c067e2e5644266e5aa968a93624c1cbc895",
+      "metadata_sha256": "fced97f03cf110023b27f7cc443e1e1a5a1dfdd28d77d9458a67a67cc795c7b5"
+    },
+    "reports/api_usage/m5_generation_m5_longllmlingua_natural": {
+      "requests": 2996,
+      "status": {
+        "success": 1500,
+        "error": 1496
+      },
+      "tokens": {
+        "prompt_tokens": 829595,
+        "completion_tokens": 10126,
+        "total_tokens": 839721
+      },
+      "requests_sha256": "fc2dc08fee4d422aba42dbde45cb8173c1cb34e8cb98e3295f8ac9de0ca8e016",
+      "metadata_sha256": "8f5764f15a475b25e543df29ed3b51a0d1cf0264dae6dbc2c316dc8f8ac44c4c"
+    },
+    "reports/api_usage/m5_generation_m5_openprovence_budget256": {
+      "requests": 2996,
+      "status": {
+        "success": 1498,
+        "error": 1498
+      },
+      "tokens": {
+        "prompt_tokens": 461872,
+        "completion_tokens": 8681,
+        "total_tokens": 470553
+      },
+      "requests_sha256": "22c35d38fb8d220181de3a1bfff0c8bf521608f71a2533a5acebf3994029358f",
+      "metadata_sha256": "22d0886af2d4bc5d32526a2fbd168f4c4de0ed8b96c7f58f3a1dd954524e899f"
+    },
+    "reports/api_usage/m5_generation_m5_openprovence_natural": {
+      "requests": 2996,
+      "status": {
+        "success": 1498,
+        "error": 1498
+      },
+      "tokens": {
+        "prompt_tokens": 1392570,
+        "completion_tokens": 9686,
+        "total_tokens": 1402256
+      },
+      "requests_sha256": "bc153917ec4eadad8004fd405337ca557d6647b8068fde02073959b384b4723c",
+      "metadata_sha256": "20185e2774f87f43736a5a8e60e08863765d210bd78d2da42a9d4c3116d09871"
+    },
+    "reports/api_usage/m5_generation_m5_raw_bm25_top25_natural": {
+      "requests": 2354,
+      "status": {
+        "success": 1465,
+        "error": 889
+      },
+      "tokens": {
+        "prompt_tokens": 45811632,
+        "completion_tokens": 11254,
+        "total_tokens": 45822886
+      },
+      "requests_sha256": "77d3f1fa9f75bc5e6a068e9dc813a82e3dffcc5a01e320d1e6a97a6dffc0f85d",
+      "metadata_sha256": "33f9aa6b6c8b31b028effeac579fdb78f19f01244460b3d0b7b85cde403ddb16"
+    },
+    "reports/api_usage/m5_judge_m5_ds_modernbert_budget256": {
+      "requests": 1694,
+      "status": {
+        "success": 849,
+        "error": 845
+      },
+      "tokens": {
+        "prompt_tokens": 80808,
+        "completion_tokens": 849,
+        "total_tokens": 81657
+      },
+      "requests_sha256": "6b487f3e7be6bed768ce343ca249df0bbaa3048f95ab07d8dad492b2885392c8",
+      "metadata_sha256": "0489646bc265e3e4d9972a73f224f1ffd474385328e0e1ee08cd1145ecbe03e8"
+    },
+    "reports/api_usage/m5_judge_m5_ds_modernbert_natural": {
+      "requests": 1473,
+      "status": {
+        "success": 738,
+        "error": 735
+      },
+      "tokens": {
+        "prompt_tokens": 73459,
+        "completion_tokens": 738,
+        "total_tokens": 74197
+      },
+      "requests_sha256": "9fbc9e85f106aec69e9c35f6e20f6e5434ac3158e136afa51d2d20df8e74951d",
+      "metadata_sha256": "41e3e63eab21f936c2c835bf29e29cbfcf8b421c5621faa914c4b5f7e4616bcd"
+    },
+    "reports/api_usage/m5_judge_m5_exit_budget256": {
+      "requests": 1710,
+      "status": {
+        "success": 858,
+        "error": 852
+      },
+      "tokens": {
+        "prompt_tokens": 82566,
+        "completion_tokens": 858,
+        "total_tokens": 83424
+      },
+      "requests_sha256": "0077baf2c21d345d3fa334ab99f929ce6000c5baa69fd8213bcf4e43904bd200",
+      "metadata_sha256": "de9582af5b69c3584c9dbc01d3df41bc5bfb97c988a74e405768e1deb7e08eb7"
+    },
+    "reports/api_usage/m5_judge_m5_exit_natural": {
+      "requests": 2669,
+      "status": {
+        "success": 1338,
+        "error": 1331
+      },
+      "tokens": {
+        "prompt_tokens": 125574,
+        "completion_tokens": 1338,
+        "total_tokens": 126912
+      },
+      "requests_sha256": "9a9bb85adb30d75722908989d9910b78dcc1bf5d820aeaac17605bbdecfe3539",
+      "metadata_sha256": "28143c54c57767e862bfb9518e15738553527cce6ac01e0f60d88aada6d26cbb"
+    },
+    "reports/api_usage/m5_judge_m5_longllmlingua_budget256": {
+      "requests": 3040,
+      "status": {
+        "success": 1524,
+        "error": 1516
+      },
+      "tokens": {
+        "prompt_tokens": 144537,
+        "completion_tokens": 1524,
+        "total_tokens": 146061
+      },
+      "requests_sha256": "a809ce7a132de8b9b248bfb37fbaff8ff4192f4166bd39ae401775664450be9a",
+      "metadata_sha256": "722787696678e06cf7fc5b81ae4024206f1012afe15d8c2b10ec268bdea5990c"
+    },
+    "reports/api_usage/m5_judge_m5_longllmlingua_natural": {
+      "requests": 3094,
+      "status": {
+        "success": 1554,
+        "error": 1540
+      },
+      "tokens": {
+        "prompt_tokens": 148047,
+        "completion_tokens": 1554,
+        "total_tokens": 149601
+      },
+      "requests_sha256": "b4d4f3334767963e39716f7f042c09e201d8e82a6617c18094fde5ced0a5fc60",
+      "metadata_sha256": "3dc4e5e08a8ece0fecf5f4af11afb333a5fc7df7a1e9ff38c99d9159f9ce8fcd"
+    },
+    "reports/api_usage/m5_judge_m5_openprovence_budget256": {
+      "requests": 2211,
+      "status": {
+        "success": 1110,
+        "error": 1101
+      },
+      "tokens": {
+        "prompt_tokens": 105171,
+        "completion_tokens": 1110,
+        "total_tokens": 106281
+      },
+      "requests_sha256": "58d8e016fa6a58edf3cb55ad1424a24881e49a7c51d2e33bee9a0a7e7e5b7564",
+      "metadata_sha256": "4e63be703f8ef3600802dbd3ae3f49b63e33a2f0431fe0e3ab11154facce64fe"
+    },
+    "reports/api_usage/m5_judge_m5_openprovence_natural": {
+      "requests": 2971,
+      "status": {
+        "success": 1486,
+        "error": 1485
+      },
+      "tokens": {
+        "prompt_tokens": 141001,
+        "completion_tokens": 1486,
+        "total_tokens": 142487
+      },
+      "requests_sha256": "35a914899ee6676263707eb8e7cb7211a009b2e9f941cd286ec4c6dcb1890d63",
+      "metadata_sha256": "2c3b70f7fc53db5310e9f41d31296f298a2e6a574cd1ad45b8aceb58f79f220f"
+    },
+    "reports/api_usage/m5_judge_m5_raw_bm25_top25_natural": {
+      "requests": 5878,
+      "status": {
+        "success": 2940,
+        "error": 2938
+      },
+      "tokens": {
+        "prompt_tokens": 276162,
+        "completion_tokens": 2941,
+        "total_tokens": 279103
+      },
+      "requests_sha256": "7f5a922c51bd94caa7724c5e6c21437b73f18540b5431e36cf5b8dcfaa7bf767",
+      "metadata_sha256": "dcba682079292487d2ac346bc0adbbde38fc692206a566c915676544b9b0486d"
+    }
+  },
+  "qa_denominator_audits": {
+    "evaluation/results/clean_v2_m5_main1500/m5_ds_modernbert_budget256.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-14T18:49:49.990556+00:00",
+      "status": "pass",
+      "method": "m4_ds_modernbert_budget_256",
+      "scenario": "m5_ds_modernbert_budget256",
+      "contexts": "reports/m5_contexts/bm25_top25/ds_modernbert_budget_256.jsonl",
+      "contexts_sha256": "d79c49199593372bee12c8daa632990aec447c0318ce7b68c142d36229cc2ea5",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_ds_modernbert_budget256.json",
+      "output_sha256": "0db9d0e2b721f5d2248e8349d2146d9e9b9a8b1c2f9d442b92c066b316d89fb4",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 464230,
+      "generation_output_tokens": 8828,
+      "judge_success": 1500,
+      "judge_cache_hits": 2092,
+      "judge_cache_misses": 849,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_ds_modernbert_budget256",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_ds_modernbert_budget256"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_ds_modernbert_natural.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-14T18:38:38.414690+00:00",
+      "status": "pass",
+      "method": "m4_ds_modernbert_natural",
+      "scenario": "m5_ds_modernbert_natural",
+      "contexts": "reports/m5_contexts/bm25_top25/ds_modernbert_natural.jsonl",
+      "contexts_sha256": "440534a38ca2df5d809d886512ad67d24d8c937659518e91d64c4758da81e9fe",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_ds_modernbert_natural.json",
+      "output_sha256": "78719b1b405107cd25563992e6bd9d144914d4d59736ce3a4aba94c763019171",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 2105502,
+      "generation_output_tokens": 9696,
+      "judge_success": 1500,
+      "judge_cache_hits": 2203,
+      "judge_cache_misses": 738,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_ds_modernbert_natural",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_ds_modernbert_natural"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_exit_budget256.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-15T10:34:52.301012+00:00",
+      "status": "pass",
+      "method": "m4_exit_budget_256",
+      "scenario": "m5_exit_budget256",
+      "contexts": "reports/m5_contexts/bm25_top25/exit_budget_256.jsonl",
+      "contexts_sha256": "d18e622e5f229ec9189f1f0fcbd2ef3c65ee3b5b1026c8c0507cf0c2790f2ea1",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_exit_budget256.json",
+      "output_sha256": "cb30787616254cdd21f29e553f4259c09a5aa2f1d004ca5f40c3ebdc96f78bec",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 464747,
+      "generation_output_tokens": 9627,
+      "judge_success": 1500,
+      "judge_cache_hits": 2082,
+      "judge_cache_misses": 859,
+      "judge_api_failures": 1,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2940,
+      "reference_judgment_failures_in_this_invocation": 1,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_exit_budget256",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_exit_budget256"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_exit_natural.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-15T10:19:26.096017+00:00",
+      "status": "pass",
+      "method": "m4_exit_natural",
+      "scenario": "m5_exit_natural",
+      "contexts": "reports/m5_contexts/bm25_top25/exit_natural.jsonl",
+      "contexts_sha256": "6871fee700d90fbdad6c5aa6a02f94991fe52644fdc186bdd66ed517016d0666",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_exit_natural.json",
+      "output_sha256": "67818fbf1ea3e30775d1f34a4cd366d915c806e7e9e2e3e7e63c096b798c8688",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 706052,
+      "generation_output_tokens": 9326,
+      "judge_success": 1500,
+      "judge_cache_hits": 1603,
+      "judge_cache_misses": 1338,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_exit_natural",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_exit_natural"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_longllmlingua_budget256.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-15T11:17:31.362166+00:00",
+      "status": "pass",
+      "method": "m45_longllmlingua_budget_256",
+      "scenario": "m5_longllmlingua_budget256",
+      "contexts": "reports/m5_longll/m45_contexts/bm25_top25/longllmlingua_budget_256.jsonl",
+      "contexts_sha256": "e81750416613db5e2ddf8fdd06eaa984208ed49cf54e4a4b5ce4f229bea82a1d",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_longllmlingua_budget256.json",
+      "output_sha256": "80c9316ddd380907364fad7d98e4d5e84b8a839b26af593f6c63d9060c1b81a7",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 491300,
+      "generation_output_tokens": 9259,
+      "judge_success": 1500,
+      "judge_cache_hits": 1417,
+      "judge_cache_misses": 1524,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_longllmlingua_budget256",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_longllmlingua_budget256"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_longllmlingua_natural.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-15T10:55:59.713140+00:00",
+      "status": "pass",
+      "method": "m45_longllmlingua_natural",
+      "scenario": "m5_longllmlingua_natural",
+      "contexts": "reports/m5_longll/m45_contexts/bm25_top25/longllmlingua_natural.jsonl",
+      "contexts_sha256": "a4d4db7981caf5f771d173742313503ff990e3b143cb66741e301d9de75a385d",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_longllmlingua_natural.json",
+      "output_sha256": "429d8c8250e096e4c48f349fabbc5a5876c3f3d7c23126bd806d02f838ecc818",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 829595,
+      "generation_output_tokens": 10126,
+      "judge_success": 1500,
+      "judge_cache_hits": 1387,
+      "judge_cache_misses": 1554,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_longllmlingua_natural",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_longllmlingua_natural"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_openprovence_budget256.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-14T18:27:18.969775+00:00",
+      "status": "pass",
+      "method": "m4_openprovence_budget_256",
+      "scenario": "m5_openprovence_budget256",
+      "contexts": "reports/m5_contexts/bm25_top25/openprovence_budget_256.jsonl",
+      "contexts_sha256": "fb8d9a40cd711765884c8e9d19f6a154c0347f376072140c75986480d71e33f9",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_openprovence_budget256.json",
+      "output_sha256": "08a0bc1f320d68549a071bdef512056b1245519b6bf79726adf00ce2e2558d1c",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 0,
+      "new_generation_computations": 1500,
+      "generation_input_tokens": 461872,
+      "generation_output_tokens": 8681,
+      "judge_success": 1500,
+      "judge_cache_hits": 1831,
+      "judge_cache_misses": 1110,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_openprovence_budget256",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_openprovence_budget256"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_openprovence_natural.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-14T18:13:35.690392+00:00",
+      "status": "pass",
+      "method": "m4_openprovence_natural",
+      "scenario": "m5_openprovence_natural",
+      "contexts": "reports/m5_contexts/bm25_top25/openprovence_natural.jsonl",
+      "contexts_sha256": "6ec2d7ed3eb18ad2e136b881d96e3a4217a62d382bd3f2014b1a15921e95221e",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_openprovence_natural.json",
+      "output_sha256": "ba126c34cdf94ec0b36b937057d183374d029de4b21ccfca6168d9292768f7ab",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 1500,
+      "new_generation_computations": 0,
+      "generation_input_tokens": 1392570,
+      "generation_output_tokens": 9686,
+      "judge_success": 1500,
+      "judge_cache_hits": 2940,
+      "judge_cache_misses": 1,
+      "judge_api_failures": 0,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2941,
+      "reference_judgment_failures_in_this_invocation": 0,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_openprovence_natural",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_openprovence_natural"
+    },
+    "evaluation/results/clean_v2_m5_main1500/m5_raw_bm25_top25_natural.audit.json": {
+      "schema_version": "m5_qa_denominator_audit_v1",
+      "created_at_utc": "2026-08-13T18:05:58.719261+00:00",
+      "status": "pass",
+      "method": "m5_raw_bm25_top25_natural",
+      "scenario": "m5_raw_bm25_top25_natural",
+      "contexts": "reports/m5_contexts/bm25_top25/raw_bm25_natural.jsonl",
+      "contexts_sha256": "85984a9702c1fc78aa3adf16c12873e91662bf4c1701a4addc5dd3ffda95f711",
+      "output": "evaluation/results/clean_v2_m5_main1500/m5_raw_bm25_top25_natural.json",
+      "output_sha256": "a89db41b10a44e5f6ad367b77eee279eefa4a60b58df2c411c47642f2898ffce",
+      "expected_ids": 1500,
+      "output_ids": 1500,
+      "unique_output_ids": 1500,
+      "exact_manifest_order": true,
+      "source_counts": {
+        "streamingqa": 1294,
+        "timeqa": 206
+      },
+      "generation_success": 1500,
+      "generation_cache_hits_before_run": 1500,
+      "new_generation_computations": 0,
+      "generation_input_tokens": 45811632,
+      "generation_output_tokens": 11254,
+      "judge_success": 1500,
+      "judge_cache_hits": 2939,
+      "judge_cache_misses": 2,
+      "judge_api_failures": 1,
+      "queries_with_zero_successful_reference_judgments": 0,
+      "reference_judgment_successes": 2940,
+      "reference_judgment_failures_in_this_invocation": 1,
+      "unrecovered_provider_errors": 0,
+      "silent_drops": 0,
+      "generation_api_audit": "reports/api_usage/m5_generation_m5_raw_bm25_top25_natural",
+      "judge_api_audit": "reports/api_usage/m5_judge_m5_raw_bm25_top25_natural"
+    }
+  },
+  "aggregate_denominators": {
+    "expected_per_artifact": 1500,
+    "expected_streamingqa_per_artifact": 1294,
+    "expected_timeqa_per_artifact": 206,
+    "generation_success_total": 13500,
+    "judge_success_total": 13500,
+    "unrecovered_provider_errors": 0,
+    "silent_drops": 0
+  },
+  "note": "Full requests, responses, provider metadata, token usage, status, duration, and retry attempts are stored locally with credentials redacted. Concurrent durations are summed; currency cost is not inferred."
+}

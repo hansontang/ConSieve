@@ -1,0 +1,94 @@
+{
+  "schema_version": "phase10_25_hierarchical_selector_bootstrap/1.0",
+  "contrast": "AllZero-CF-Clean minus No-CF-Clean",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "resampling_unit": "diagnostic_pair_id",
+  "paired_within_seed": true,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 20260810,
+  "individual_seed_effects": {
+    "42": {
+      "positive_evidence_recall": -0.01957173085813868,
+      "invalid_evidence_retention": -0.27420205199331416,
+      "score_gap_mean": 0.21971445791810307,
+      "pairwise_discrimination_accuracy": 0.034535367545076245,
+      "auroc": 0.10010462260683617
+    },
+    "43": {
+      "positive_evidence_recall": 0.003968072111276033,
+      "invalid_evidence_retention": -0.23327160299247673,
+      "score_gap_mean": 0.20724055111910966,
+      "pairwise_discrimination_accuracy": 0.052190245030050875,
+      "auroc": 0.09085042934946042
+    },
+    "44": {
+      "positive_evidence_recall": -0.025644568484374353,
+      "invalid_evidence_retention": -0.260734956790782,
+      "score_gap_mean": 0.18768068989529746,
+      "pairwise_discrimination_accuracy": 0.04888176144244105,
+      "auroc": 0.08702679675231373
+    }
+  },
+  "metrics": {
+    "positive_evidence_recall": {
+      "point_effect": -0.013749409077079,
+      "ci95_low": -0.029983284312774607,
+      "ci95_high": 0.004523464388452224,
+      "direction": "higher_is_better"
+    },
+    "invalid_evidence_retention": {
+      "point_effect": -0.2560695372588576,
+      "ci95_low": -0.2872656851980275,
+      "ci95_high": -0.22396756880525084,
+      "direction": "lower_is_better"
+    },
+    "score_gap_mean": {
+      "point_effect": 0.20487856631083673,
+      "ci95_low": 0.18318619546562714,
+      "ci95_high": 0.22620727853970088,
+      "direction": "higher_is_better"
+    },
+    "pairwise_discrimination_accuracy": {
+      "point_effect": 0.04520245800585606,
+      "ci95_low": 0.029149137001078722,
+      "ci95_high": 0.06144684754969948,
+      "direction": "higher_is_better"
+    },
+    "auroc": {
+      "point_effect": 0.09266061623620343,
+      "ci95_low": 0.08202796563310799,
+      "ci95_high": 0.10303240714860488,
+      "direction": "higher_is_better"
+    }
+  },
+  "sources": {
+    "no_cf_seed42": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_23/results/stress/no_cf.jsonl",
+      "sha256": "ec3b45edcffe6e48faf4eabab243a040b2a4230e34d93c4f1ff56e1e41a644eb"
+    },
+    "no_cf_seed43": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/results/stress/no_cf_seed43.jsonl",
+      "sha256": "73e4e949de6b546af667f1d99ce91d3f2e2817b92b0207947b7b016c7939267f"
+    },
+    "no_cf_seed44": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/results/stress/no_cf_seed44.jsonl",
+      "sha256": "19e2a0df1b046b744161a133babd85189aa67868bee513c98f6761fab77173ad"
+    },
+    "allzero_cf_seed42": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_23/results/stress/allzero_cf.jsonl",
+      "sha256": "133f64cef7dece98f29cace4d65cc7f5da4e1e44aabfeb86f326db254547b60c"
+    },
+    "allzero_cf_seed43": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/results/stress/allzero_cf_seed43.jsonl",
+      "sha256": "5dd3efa6e87f56657654328becf799388f445718ee2f320a1ed5158d33298a5e"
+    },
+    "allzero_cf_seed44": {
+      "path": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/results/stress/allzero_cf_seed44.jsonl",
+      "sha256": "0d1f078bf3c07895d5c420bf6f339cd86d8ed085cf61d542cedd0593d4ede7aa"
+    }
+  }
+}

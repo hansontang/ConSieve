@@ -1,0 +1,254 @@
+{
+  "schema_version": "m5_frozen_protocol_v1",
+  "status": "frozen_before_main1500_qa",
+  "frozen_at_utc": "2026-08-13T16:54:09.840096+00:00",
+  "formal_main1500_qa_artifacts_existing_at_freeze": [],
+  "human_audit": "independent; excluded from all M5 protocol and results",
+  "repo": {
+    "root": "${CONSIEVE_ROOT}",
+    "git_head": "560030e470b56961359fc7e1b0da18a0b212cbe6",
+    "git_branch": "main",
+    "dirty_worktree_expected_due_to_prior_milestone_artifacts": true
+  },
+  "main1500": {
+    "manifest": "manifests/main1500.json",
+    "manifest_sha256": "0185f68b5212e8c7f945a1787cafdee09c8cb33d28d345193283e05a2860afd7",
+    "dataset": "datasets/short_timed/timed_eval2_all.jsonl",
+    "dataset_sha256": "9223ae9fe0d79b491ab10122b867b6cae590856a2053acfec451286bdc16be57",
+    "denominator": 1500,
+    "source_denominators": {
+      "streamingqa": 1294,
+      "timeqa": 206
+    },
+    "selection_seed": 20260810,
+    "performance_based_selection": false
+  },
+  "retrieval": {
+    "backend": "pyserini",
+    "index_path": "./retrieval/indexes/clean_v2_wmt_timeqa_bm25",
+    "index_manifest": "./manifests/canonical_retrieval_index_v2.json",
+    "corpus_sha256": "6474cd67176a7e0d7d6de0db84403cf05fd27ce23762a9e30ff02f78e1984aed",
+    "index_sha256": "b893b4efb8176f447b17e1caf5f28231b80ea34d8ac3c581169623c801b81e0a",
+    "bm25": {
+      "k1": 0.9,
+      "b": 0.4
+    },
+    "top_k_materialized": 25,
+    "smaller_depths": "exact ordered prefixes of top25",
+    "threads": 32,
+    "bm25_cache_path": "./evaluation/cache/clean_v2/canonical_bm25_cache.db"
+  },
+  "methods": {
+    "raw_bm25": {
+      "operating_point": "full ordered top25 documents"
+    },
+    "openprovence": {
+      "model": "hotchpotch/open-provence-reranker-large-v1",
+      "revision": "85e9df2b483c8b40e2a03fe30a9efa0d67e360f7",
+      "threshold": 0.2
+    },
+    "ds_modernbert": {
+      "model": "anonymous/ts-highlighter-modernbert-timed-20260119_022815",
+      "revision": "a6708dac479d19c5a10d87b3de14ea5c96f9a16e",
+      "threshold": 0.4
+    },
+    "exit": {
+      "repository": "https://github.com/ThisIsHwang/EXIT",
+      "repository_commit": "4c0141a7f19c192f1be24a2c83e672078d6ba29b",
+      "base_model": "google/gemma-2b-it",
+      "base_revision": "96988410cbdaeb8d5093d1ebdc5a8fb563e02bad",
+      "model": "doubleyyh/exit-gemma-2b",
+      "revision": "e286ce9096178a4aefb743d0919705250fdf1b23",
+      "threshold": 0.5,
+      "threshold_inclusive": true,
+      "overflow_policy": "deterministic_sentence_boundary_chunking_with_exact_prompt_check_and_lossless_oversize_spacy_unit_subsegmentation"
+    },
+    "longllmlingua": {
+      "repository": "https://github.com/microsoft/LLMLingua",
+      "repository_commit": "e0e9d99beb94098bbd924aa53c2c112eac41c758",
+      "package_version": "0.2.2",
+      "model": "NousResearch/Llama-2-7b-hf",
+      "model_revision": "8efe6c9b93655b934e27bd9981e3ec13e55aee9d",
+      "max_position_embeddings": 4096,
+      "condition_compare": true,
+      "condition_in_question": "after",
+      "rank_method": "longllmlingua",
+      "use_context_level_filter": true,
+      "use_sentence_level_filter": false,
+      "use_token_level_filter": true,
+      "context_budget": "+100",
+      "dynamic_context_compression_ratio": 0.4,
+      "reorder_context": "sort",
+      "iterative_size": 200,
+      "concate_question": false,
+      "natural_target_token": 500,
+      "long_input_adaptation": "deterministic_lossless_character_span_fragmentation_frozen_in_m45",
+      "matched_256": {
+        "initial_internal_target": 256,
+        "qwen_hard_cap": 256,
+        "max_passes": 12,
+        "update_rule": "max(1, min(previous_target-1, floor(previous_target*256/qwen_output_tokens)-4))",
+        "posthoc_truncation": "prohibited"
+      }
+    }
+  },
+  "token_accounting": {
+    "tokenizer_name": "Qwen/Qwen3-4B-Instruct-2507",
+    "tokenizer_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "context_format": "Retrieved Document: {content}",
+    "context_separator": "\n\n"
+  },
+  "matched_budget": {
+    "selection": "per_query_hard_cap",
+    "representative_budget": 256,
+    "frozen_selection_artifact": "./reports/m4_budget_selection.json",
+    "evaluation_set_used": false
+  },
+  "generator": {
+    "mode": "qwen",
+    "cache_path": "./evaluation/cache/clean_v2/m5_llm_cache.db",
+    "api_audit": {
+      "enabled": true,
+      "log_dir": "./reports/api_usage",
+      "run_id": "m5_generation",
+      "stage": "answer_generation",
+      "metadata": {
+        "protocol": "clean_v2_m5",
+        "milestone": "M5",
+        "manifest": "main1500"
+      }
+    },
+    "qwen": {
+      "api_key": "${QWEN_API_KEY}",
+      "model_name": "qwen-plus",
+      "max_concurrency": 8,
+      "request_timeout": 120,
+      "max_retries": 0,
+      "explicit_retries": 4,
+      "retry_backoff_seconds": 0.5,
+      "request_spacing_seconds": 0
+    },
+    "sampling": {
+      "max_tokens": 128,
+      "temperature": 0.0,
+      "top_p": 1.0
+    }
+  },
+  "judge": {
+    "run_during_eval": true,
+    "mode": "qwen",
+    "cache_path": "./evaluation/cache/clean_v2/m5_judge_cache.db",
+    "prompt_version": "clean_v2_yes_no_v1",
+    "model_version": null,
+    "api_audit": {
+      "enabled": true,
+      "log_dir": "./reports/api_usage",
+      "run_id": "m5_judge",
+      "stage": "llm_as_a_judge",
+      "metadata": {
+        "protocol": "clean_v2_m5",
+        "milestone": "M5",
+        "manifest": "main1500"
+      }
+    },
+    "qwen": {
+      "api_key": "${QWEN_API_KEY}",
+      "model_name": "qwen-plus",
+      "max_concurrency": 8,
+      "request_timeout": 60,
+      "max_retries": 0,
+      "explicit_retries": 4,
+      "retry_backoff_seconds": 0.5,
+      "request_spacing_seconds": 0
+    },
+    "sampling": {
+      "max_tokens": 8,
+      "temperature": 0.0
+    },
+    "batch_size": 5
+  },
+  "prompts": {
+    "context_format": "Retrieved Document: {content}",
+    "context_separator": "\n\n",
+    "system": "You are a helpful assistant. Give the best answer informed by the retrieved documents to the following question in a word, a phrase or a short sentence. No need to explain your answer. Keep your response concise.",
+    "user": "{question}"
+  },
+  "statistics": {
+    "paired_bootstrap_resamples": 10000,
+    "paired_bootstrap_seed": 20260810
+  },
+  "formal_scenarios": {
+    "natural_bm25_top25": [
+      "raw_bm25",
+      "openprovence",
+      "ds_modernbert",
+      "exit",
+      "longllmlingua"
+    ],
+    "matched_bm25_top25_budget256": [
+      "openprovence",
+      "ds_modernbert",
+      "exit",
+      "longllmlingua"
+    ],
+    "source_breakdowns": [
+      "all",
+      "streamingqa",
+      "timeqa"
+    ]
+  },
+  "evidence_metrics": {
+    "main1500_status": "N/A",
+    "reason": "The M1-frozen Main1500 manifest has no frozen sentence-evidence annotation sidecar; fuzzy or newly generated alignment is prohibited in M5."
+  },
+  "retry_and_denominator_policy": {
+    "generation_explicit_retries": 4,
+    "judge_explicit_retries": 4,
+    "fail_closed_expected_ids": 1500,
+    "failed_requests_retained_in_denominator": true,
+    "silent_drop_prohibited": true,
+    "api_metadata_and_payload_logging": true
+  },
+  "frozen_equality_checks": {
+    "manifest_validation_pass": true,
+    "no_formal_main1500_qa_before_freeze": true,
+    "bm25_identical_to_m4": true,
+    "corpus_hash_identical_to_m4": true,
+    "index_hash_identical_to_m4": true,
+    "tokenizer_identical_to_m4": true,
+    "representative_budget_identical_to_m4": true,
+    "openprovence_identical_to_m4": true,
+    "ds_modernbert_identical_to_m4": true,
+    "exit_identical_to_m4": true,
+    "generator_provider_identical_to_m4": true,
+    "generator_sampling_identical_to_m4": true,
+    "judge_provider_identical_to_m4": true,
+    "judge_sampling_identical_to_m4": true,
+    "judge_prompt_identical_to_m4": true,
+    "prompts_identical_to_m4": true,
+    "longll_repository_identical_to_m45": true,
+    "longll_model_identical_to_m45": true,
+    "longll_natural_target_identical_to_m45": true,
+    "longll_budget256_identical_to_m45": true,
+    "bootstrap_seed_exact": true,
+    "bootstrap_resamples_exact": true
+  },
+  "artifact_sha256": {
+    "configs/m5_final_main1500.yaml": "2ab9775951467b69f7d61aa9657c54b1233dba87bf824baaee213c54791d800a",
+    "manifests/main1500.json": "0185f68b5212e8c7f945a1787cafdee09c8cb33d28d345193283e05a2860afd7",
+    "datasets/short_timed/timed_eval2_all.jsonl": "9223ae9fe0d79b491ab10122b867b6cae590856a2053acfec451286bdc16be57",
+    "manifests/canonical_retrieval_index_v2.json": "765b2160aadb40f4d535351dc188f0aab79b32794d1dc4fa1a5a3ca54cd06512",
+    "manifests/bm25_clean_v2_selection.json": "141149cc71d32c7a74d9e8e1252b3ab65d6ddf1d716c56f9a69e9f7bb0c2c3f3",
+    "manifests/gold_document_ids_clean_v2.json": "4b5c283b99aa553faf5d2cbc201b8974b51ff9aa03c9fe4a970a9b47ebbcdfd6",
+    "reports/m4_budget_selection.json": "fc8d59507f7e902532ee4c153b10a1bc1de8e6d5a42386daeaa0667c86f49198",
+    "configs/m4_modern_baselines.yaml": "c78f085475d3d1cddc13db2b6fbca1873a9e674350fe5588ae1196722c272ace",
+    "configs/m45_longllmlingua.yaml": "75eea3e5068b11b3f60596a221a5f649410330ecb64cd8549e8658c59170243c",
+    "reports/m4_baseline_availability.json": "58d03879615b41b6f157f2c4ed06d61b35836462140690fad666f4009cbfc8f6",
+    "reports/m45_longllmlingua_availability.json": "cf0a6e2b46b4fbcaafd626f063fd62bf82ad6ca46b23db8fb9e2a1263daa5bf0",
+    "scripts/run_m4_scores.py": "74523e33053e7ebdfb574532ca3b4e17f7fa958089010834e71a31f6abe145a9",
+    "scripts/build_m4_contexts.py": "41acca68115c95056a1111de1ab7d90933d68c82ffba4577b4154f31a071ef6e",
+    "scripts/run_m45_longllmlingua.py": "8b591317bf1ade74fa9d87610719fd30e35d748694c989b0cbac9528a3f386f4",
+    "evaluation/query_formatter.py": "d93f8e5a32403f739b35069823717a8fa656f206f39c7b16e493d5d4c86d6652",
+    "evaluation/clean_protocol.py": "0434eb63055dae8647bf7b82e195a6467fc452d9bfd5f31981149429591f907e"
+  }
+}

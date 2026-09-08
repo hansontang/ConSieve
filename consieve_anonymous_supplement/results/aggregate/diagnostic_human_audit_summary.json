@@ -1,0 +1,424 @@
+{
+  "schema_version": "m2_human_audit_final_report_v1",
+  "status": "FINAL_AFTER_BLINDED_ADJUDICATION",
+  "population": {
+    "frozen_pairs": 412,
+    "sample_pairs": 100,
+    "seed": 20260810,
+    "sampling_method": "ascending SHA256('m2-human-audit-v2|20260810|sample|<pair_id>'), first 100; no stratification or dimension quotas",
+    "source_counts": {
+      "streamingqa": 90,
+      "timeqa": 10
+    },
+    "original_side_counts": {
+      "A": 50,
+      "B": 50
+    },
+    "population_manifest_sha256": "44f5a6ababd9e0ce8be12dc422974958e97d9b98df955eb7febe857396228cbf",
+    "ordered_sample_set_sha256": "7bef6be300aefc08940d3562b6e24f1342c1cfc0123b4c2bc3befe3b8e356973"
+  },
+  "initial_inter_annotator": {
+    "side_decisions": 200,
+    "side_label_agreement": {
+      "count": 189,
+      "n": 200,
+      "rate": 0.945,
+      "wilson_95": [
+        0.9042130012276914,
+        0.9690146582965411
+      ]
+    },
+    "cohen_kappa_3class": 0.8905690409868683,
+    "binary_nonambiguous_side_decisions": 199,
+    "binary_nonambiguous_agreement": {
+      "count": 189,
+      "n": 199,
+      "rate": 0.949748743718593,
+      "wilson_95": [
+        0.9099839887498027,
+        0.9724786056364403
+      ]
+    },
+    "cohen_kappa_binary_nonambiguous": 0.8995152494445566,
+    "by_side": {
+      "A": {
+        "agreement": {
+          "count": 96,
+          "n": 100,
+          "rate": 0.96,
+          "wilson_95": [
+            0.9016292856411208,
+            0.9843366960084523
+          ]
+        },
+        "cohen_kappa_3class": 0.9208077608394377
+      },
+      "B": {
+        "agreement": {
+          "count": 93,
+          "n": 100,
+          "rate": 0.93,
+          "wilson_95": [
+            0.8625048526092651,
+            0.9656807389327273
+          ]
+        },
+        "cohen_kappa_3class": 0.8600000000000001
+      }
+    },
+    "exact_pair_label_agreement": {
+      "count": 89,
+      "n": 100,
+      "rate": 0.89,
+      "wilson_95": [
+        0.8136870349691969,
+        0.9374580364293543
+      ]
+    },
+    "strict_validity_agreement": {
+      "count": 89,
+      "n": 100,
+      "rate": 0.89,
+      "wilson_95": [
+        0.8136870349691969,
+        0.9374580364293543
+      ]
+    },
+    "strict_validity_cross_tab": {
+      "both_valid": 86,
+      "both_not_valid": 3,
+      "one_valid_one_not": 11
+    },
+    "exact_resolved_pairs": {
+      "n": 89,
+      "strict_valid": 86,
+      "strict_invalid": 3,
+      "strict_validity_rate": {
+        "count": 86,
+        "n": 89,
+        "rate": 0.9662921348314607,
+        "wilson_95": [
+          0.9055263755943858,
+          0.9884707788482102
+        ]
+      }
+    },
+    "strict_validity_identification_bounds_before_adjudication": {
+      "lower": 0.86,
+      "upper": 0.97,
+      "note": "Descriptive bounds only: lower treats all disputed pairs as invalid; upper treats all disputed pairs as valid."
+    },
+    "by_source": {
+      "StreamingQA": {
+        "n": 90,
+        "exact_pair_label_agreement": {
+          "count": 82,
+          "n": 90,
+          "rate": 0.9111111111111111,
+          "wilson_95": [
+            0.8342945337394592,
+            0.9542695074632055
+          ]
+        },
+        "annotator_a_strict_validity": {
+          "count": 84,
+          "n": 90,
+          "rate": 0.9333333333333333,
+          "wilson_95": [
+            0.8620990522567448,
+            0.9690900722541721
+          ]
+        },
+        "annotator_b_strict_validity": {
+          "count": 86,
+          "n": 90,
+          "rate": 0.9555555555555556,
+          "wilson_95": [
+            0.8912314496718777,
+            0.9825827581472913
+          ]
+        },
+        "exact_resolved_strict_validity": {
+          "count": 81,
+          "n": 82,
+          "rate": 0.9878048780487805,
+          "wilson_95": [
+            0.9341066031158609,
+            0.9978440079181878
+          ]
+        }
+      },
+      "TimeQA": {
+        "n": 10,
+        "exact_pair_label_agreement": {
+          "count": 7,
+          "n": 10,
+          "rate": 0.7,
+          "wilson_95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        },
+        "annotator_a_strict_validity": {
+          "count": 8,
+          "n": 10,
+          "rate": 0.8,
+          "wilson_95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ]
+        },
+        "annotator_b_strict_validity": {
+          "count": 5,
+          "n": 10,
+          "rate": 0.5,
+          "wilson_95": [
+            0.236593090512564,
+            0.7634069094874361
+          ]
+        },
+        "exact_resolved_strict_validity": {
+          "count": 5,
+          "n": 7,
+          "rate": 0.7142857142857143,
+          "wilson_95": [
+            0.35893445183261935,
+            0.9177810759959433
+          ]
+        }
+      }
+    },
+    "mutual_support_evidence": {
+      "n": 96,
+      "exact_set_agreement": 0.5416666666666666,
+      "mean_jaccard": 0.7296874999999999,
+      "short_answer_normalized_exact": 0.625,
+      "short_answer_mean_token_f1": 0.8313003923642562
+    },
+    "pairs_requiring_label_adjudication": 11
+  },
+  "adjudication": {
+    "required_pairs": 11,
+    "completed_pairs": 11,
+    "strict_valid": 10,
+    "strict_invalid": 1,
+    "exact_pair_match_annotator_a": 5,
+    "exact_pair_match_annotator_b": 5,
+    "exact_pair_match_neither": 1,
+    "confidence_counts": {
+      "HIGH": 11
+    },
+    "adjudicator_id_nonempty": 0,
+    "adjudicated_date_nonempty": 0,
+    "normalization_events": [
+      {
+        "audit_id": "H002",
+        "field": "B_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H012",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H020",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H038",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H047",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H059",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H061",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H077",
+        "field": "A_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H084",
+        "field": "B_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      },
+      {
+        "audit_id": "H090",
+        "field": "B_Label",
+        "raw": "SUPPORT",
+        "normalized": "SUPPORTS",
+        "rule": "documented exact alias SUPPORT -> SUPPORTS"
+      }
+    ],
+    "content_issues": []
+  },
+  "final": {
+    "pairs": 100,
+    "strict_pair_validity": {
+      "count": 96,
+      "n": 100,
+      "rate": 0.96,
+      "wilson_95": [
+        0.9016292856411208,
+        0.9843366960084523
+      ]
+    },
+    "original_query_support": {
+      "count": 98,
+      "n": 100,
+      "rate": 0.98,
+      "wilson_95": [
+        0.929988209271456,
+        0.9944980324498376
+      ]
+    },
+    "perturbed_query_rejection": {
+      "count": 98,
+      "n": 100,
+      "rate": 0.98,
+      "wilson_95": [
+        0.929988209271456,
+        0.9944980324498376
+      ]
+    },
+    "pair_pattern_counts": {
+      "B_ONLY": 48,
+      "A_ONLY": 48,
+      "NEITHER": 2,
+      "BOTH": 2
+    },
+    "side_label_counts": {
+      "DOES_NOT_SUPPORT": 100,
+      "SUPPORTS": 100
+    },
+    "label_source_counts": {
+      "CONSENSUS": 89,
+      "ADJUDICATED": 11
+    },
+    "by_source": {
+      "StreamingQA": {
+        "n": 90,
+        "strict_validity": {
+          "count": 88,
+          "n": 90,
+          "rate": 0.9777777777777777,
+          "wilson_95": [
+            0.9225547331137463,
+            0.9938845580136748
+          ]
+        },
+        "original_query_support": {
+          "count": 88,
+          "n": 90,
+          "rate": 0.9777777777777777,
+          "wilson_95": [
+            0.9225547331137463,
+            0.9938845580136748
+          ]
+        },
+        "perturbed_query_rejection": {
+          "count": 90,
+          "n": 90,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9590643744356734,
+            1.0000000000000002
+          ]
+        }
+      },
+      "TimeQA": {
+        "n": 10,
+        "strict_validity": {
+          "count": 8,
+          "n": 10,
+          "rate": 0.8,
+          "wilson_95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ]
+        },
+        "original_query_support": {
+          "count": 10,
+          "n": 10,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ]
+        },
+        "perturbed_query_rejection": {
+          "count": 8,
+          "n": 10,
+          "rate": 0.8,
+          "wilson_95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ]
+        }
+      }
+    },
+    "invalid_pairs": [
+      {
+        "audit_id": "H017",
+        "source": "StreamingQA",
+        "pattern": "NEITHER",
+        "failure_mode": "original query not supported",
+        "final_label_source": "CONSENSUS"
+      },
+      {
+        "audit_id": "H023",
+        "source": "TimeQA",
+        "pattern": "BOTH",
+        "failure_mode": "perturbed query also supported (collision)",
+        "final_label_source": "CONSENSUS"
+      },
+      {
+        "audit_id": "H025",
+        "source": "StreamingQA",
+        "pattern": "NEITHER",
+        "failure_mode": "original query not supported",
+        "final_label_source": "ADJUDICATED"
+      },
+      {
+        "audit_id": "H064",
+        "source": "TimeQA",
+        "pattern": "BOTH",
+        "failure_mode": "perturbed query also supported (collision)",
+        "final_label_source": "CONSENSUS"
+      }
+    ]
+  },
+  "reporting_guardrail": "The final 96/100 estimate applies to the uniform sample from the frozen verified 412 only, not the original 1,646 candidate pairs."
+}

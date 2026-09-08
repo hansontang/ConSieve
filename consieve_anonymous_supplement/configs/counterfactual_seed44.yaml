@@ -1,0 +1,34 @@
+model_args:
+  model_name_or_path: hotchpotch/open-provence-reranker-large-v1
+  revision: 85e9df2b483c8b40e2a03fe30a9efa0d67e360f7
+  trust_remote_code: true
+data_args:
+  train_file: ${CONSIEVE_ROOT}/paper_rewrite/phase10_23/training_data/allzero_cf/train.jsonl
+  valid_file: ${CONSIEVE_ROOT}/datasets/m3_controlled/validation_clean_v2_2778.jsonl
+  eval_file: ${CONSIEVE_ROOT}/datasets/m3_controlled/validation_clean_v2_2778.jsonl
+training_args:
+  output_dir: ${CONSIEVE_ROOT}/paper_rewrite/phase10_25/models/allzero_cf_seed44
+  learning_rate: 5.0e-05
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 16
+  gradient_accumulation_steps: 8
+  num_train_epochs: 2
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  save_total_limit: 3
+  bf16: true
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+  greater_is_better: false
+loss_args:
+  ranking_weight: 0.0
+  pruning_weight: 1.0
+wandb:
+  enabled: false
+  project: consieve-phase10-25
+  run_name: allzero_cf_seed44
+seed: 44
+max_length: 4048

@@ -1,0 +1,300 @@
+{
+  "schema_version": "m5_environment_manifest_v1",
+  "created_at_utc": "2026-08-15T11:51:14.761071+00:00",
+  "repo_root": "${CONSIEVE_ROOT}",
+  "git_head": "560030e470b56961359fc7e1b0da18a0b212cbe6",
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+  "retrieval_runtime": {
+    "python": "/usr/bin/python3 -S",
+    "pythonpath": "${PROJECT_ROOT}/.tmp_ds_m1/python",
+    "java_home": "${PROJECT_ROOT}/.tmp_ds_m1/jdk21"
+  },
+  "highlighter_runtime": {
+    "pythonpath": "${PROJECT_ROOT}/.tmp_ds_m0_5/runtime_clean:${PROJECT_ROOT}/.tmp_ds_m1/python"
+  },
+  "exit_runtime": {
+    "python_executable": "/usr/bin/python3",
+    "python": "3.10.12",
+    "torch": "2.3.0a0+ebedce2",
+    "cuda": "12.3",
+    "transformers": "4.44.2",
+    "peft": "0.12.0",
+    "accelerate": "0.34.2",
+    "bitsandbytes": "0.43.3",
+    "spacy": "3.7.6",
+    "protobuf_compatibility_pin": "3.20.3",
+    "fragment_batch_size": 1,
+    "runtime_target": "${PROJECT_ROOT}/.tmp_ds_m4/runtime_exit_official",
+    "validation_artifact": "reports/m4_exit_runtime_validation.json",
+    "known_difference_from_repository_reference": "Torch 2.3.0a0+ebedce2 instead of Torch 2.4.0; fragment batch size 1 instead of 8 for full-document memory safety"
+  },
+  "longllmlingua_runtime": {
+    "schema_version": "m45_environment_manifest_v1",
+    "created_utc": "2026-08-13T11:40:16.837678+00:00",
+    "filesystem_boundary": "${PROJECT_ROOT}",
+    "repository_root": "${CONSIEVE_ROOT}",
+    "official_repository": {
+      "path": "${PROJECT_ROOT}/external/LLMLingua",
+      "commit": "e0e9d99beb94098bbd924aa53c2c112eac41c758",
+      "status_porcelain": ""
+    },
+    "compressor_runtime": {
+      "python": "3.10.12",
+      "executable": "/usr/bin/python3.10",
+      "torch": "2.3.0a0+ebedce2",
+      "torch_file": "/usr/local/lib/python3.10/dist-packages/torch/__init__.py",
+      "cuda_runtime": "12.3",
+      "transformers": "4.44.2",
+      "transformers_file": "${PROJECT_ROOT}/.tmp_ds_m4/runtime_exit_official/transformers/__init__.py",
+      "accelerate": "0.34.2",
+      "tiktoken": "0.12.0",
+      "nltk": "3.9.1",
+      "pythonpath": "${PROJECT_ROOT}/.tmp_ds_m45/runtime:${PROJECT_ROOT}/external/LLMLingua:${PROJECT_ROOT}/.tmp_ds_m4/runtime_exit_official",
+      "python_no_user_site": "1"
+    },
+    "qwen_counter_runtime": {
+      "python": "3.10.12",
+      "torch": "2.13.0+cu130",
+      "transformers": "4.57.6",
+      "transformers_file": "${PROJECT_ROOT}/.tmp_ds_m0_5/runtime_clean/transformers/__init__.py"
+    },
+    "model": {
+      "name": "NousResearch/Llama-2-7b-hf",
+      "revision": "8efe6c9b93655b934e27bd9981e3ec13e55aee9d",
+      "runtime_parameter_count": 6738415616,
+      "dtype": "float16"
+    },
+    "qwen_context_tokenizer": {
+      "name": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+    },
+    "gpus": [
+      "0, NVIDIA H20, GPU-45628ec8-debf-2b53-6008-494aed4d0443, 97871, 580.159.04",
+      "1, NVIDIA H20, GPU-41381357-d7ed-0a03-43ac-c3a35f22b546, 97871, 580.159.04",
+      "2, NVIDIA H20, GPU-947faa70-cd70-aba9-1a8e-e45422b5eb3f, 97871, 580.159.04",
+      "3, NVIDIA H20, GPU-7318a5f9-02cf-3ebb-9411-1b372f00dd6a, 97871, 580.159.04",
+      "4, NVIDIA H20, GPU-0cf718e7-d7bf-e72e-5d59-35be59826024, 97871, 580.159.04",
+      "5, NVIDIA H20, GPU-dda6281a-8a3f-8055-71c8-232ca8cc7402, 97871, 580.159.04",
+      "6, NVIDIA H20, GPU-0451606e-55e4-eee0-2664-6ae5583f03e5, 97871, 580.159.04",
+      "7, NVIDIA H20, GPU-0692f39a-369d-3608-80ce-bddb18b19183, 97871, 580.159.04"
+    ],
+    "environment_paths": {
+      "HOME": "${PROJECT_ROOT}/.m45_home",
+      "HF_HOME": "${PROJECT_ROOT}/.cache/huggingface",
+      "XDG_CACHE_HOME": "${PROJECT_ROOT}/.cache/xdg",
+      "XDG_CONFIG_HOME": "${PROJECT_ROOT}/.config",
+      "XDG_DATA_HOME": "${PROJECT_ROOT}/.local/share",
+      "XDG_STATE_HOME": "${PROJECT_ROOT}/.local/state",
+      "PIP_CACHE_DIR": "${PROJECT_ROOT}/.cache/pip",
+      "TORCH_HOME": "${PROJECT_ROOT}/.cache/torch",
+      "CUDA_CACHE_PATH": "${PROJECT_ROOT}/.cache/cuda",
+      "MPLCONFIGDIR": "${PROJECT_ROOT}/.cache/matplotlib",
+      "NUMBA_CACHE_DIR": "${PROJECT_ROOT}/.cache/numba",
+      "TMPDIR": "${PROJECT_ROOT}/.tmp_ds_m45/tmp",
+      "M45_RUNTIME": "${PROJECT_ROOT}/.tmp_ds_m45/runtime"
+    },
+    "artifacts": {
+      "configs/m45_longllmlingua.yaml": {
+        "exists": true,
+        "bytes": 4303,
+        "sha256": "75eea3e5068b11b3f60596a221a5f649410330ecb64cd8549e8658c59170243c"
+      },
+      "docs/M4_5_LONGLMLINGUA.md": {
+        "exists": true,
+        "bytes": 17026,
+        "sha256": "c092156c53f096d8158b4d1e77def7e266abfd59fd91a2f849ad93ef786f2a1a"
+      },
+      "scripts/m45_env.sh": {
+        "exists": true,
+        "bytes": 1588,
+        "sha256": "69bdb8c6fb5f0a744cd379d52abff920e81fc0fc292783710b4a836d4009ef49"
+      },
+      "scripts/run_m45_longllmlingua.py": {
+        "exists": true,
+        "bytes": 22767,
+        "sha256": "8b591317bf1ade74fa9d87610719fd30e35d748694c989b0cbac9528a3f386f4"
+      },
+      "scripts/qwen_token_counter_server.py": {
+        "exists": true,
+        "bytes": 741,
+        "sha256": "48593515599bc00ec3b6f035166dda5dd3dc525d86ea1205fae4d4429ac2bfb1"
+      },
+      "scripts/merge_m45_longllmlingua.py": {
+        "exists": true,
+        "bytes": 4916,
+        "sha256": "199586fa3263ebc8e57cfba5604994eb10a456964ac67cc55623cd5115b2a0ec"
+      },
+      "scripts/run_m45_compression.sh": {
+        "exists": true,
+        "bytes": 3194,
+        "sha256": "6878cc838f4153263674a3318b4ed01d2fa7bc72e8114fbdaaefd9b2fb941ba3"
+      },
+      "scripts/run_m45_qa.py": {
+        "exists": true,
+        "bytes": 6242,
+        "sha256": "cad0a7f16132aa18c457a64a1c1a6332ae192dd9c13446e52413865b00a99ac3"
+      },
+      "scripts/run_m45_qa.sh": {
+        "exists": true,
+        "bytes": 1255,
+        "sha256": "6fa0046ee146bb216d875f360001bd2901130f62abfda96654db5d41e84d6918"
+      },
+      "scripts/analyze_m45_results.py": {
+        "exists": true,
+        "bytes": 11365,
+        "sha256": "7509cc4bb5ec19d816edce3f650123c779c9fedfcea8c9de7e1d671b84671cd8"
+      },
+      "scripts/build_m45_environment_manifest.py": {
+        "exists": true,
+        "bytes": 5333,
+        "sha256": "ae619deb5e4de02ec827e4cce0172ac26e96eace28469dce74d6c4799c10f251"
+      },
+      "scripts/validate_m45_compression.py": {
+        "exists": true,
+        "bytes": 4727,
+        "sha256": "7b5cf9e2b393c517efab9aaa87e19bd742dbab34bc89be2fda5f6ded20418471"
+      },
+      "scripts/validate_m45_frozen_protocol.py": {
+        "exists": true,
+        "bytes": 3626,
+        "sha256": "0d1780cb2ea993466ed51f83c0a847eaf8ac12e839e4f88f827ef6c2027342d9"
+      },
+      "reports/m45_longllmlingua_availability.json": {
+        "exists": true,
+        "bytes": 6264,
+        "sha256": "cf0a6e2b46b4fbcaafd626f063fd62bf82ad6ca46b23db8fb9e2a1263daa5bf0"
+      },
+      "reports/m45_gt406_longllmlingua_contexts.manifest.json": {
+        "exists": true,
+        "bytes": 1502,
+        "sha256": "88cad6274caf94a3d3173344522a861f849ffadd1f969d507584fc8634507791"
+      },
+      "reports/m45_compression_validation.json": {
+        "exists": true,
+        "bytes": 605,
+        "sha256": "b9ffd70aeef449a056578370e18e9862f4edc5b297a64ee73fa581922b8c6e7f"
+      },
+      "reports/m45_frozen_protocol_validation.json": {
+        "exists": true,
+        "bytes": 1262,
+        "sha256": "5ad729953082e45e70b313f1089f43be77e0f80af92ef4f5c5383cffe5f149f3"
+      },
+      "reports/m45_efficiency/longllmlingua.manifest.json": {
+        "exists": true,
+        "bytes": 2628,
+        "sha256": "136cf06f4a1d958a7ea2e847447b1bf69452ada65184142ecc91360fd3e63d9c"
+      },
+      "reports/m45_natural_results.csv": {
+        "exists": true,
+        "bytes": 2606,
+        "sha256": "66dbc89ba7106cabc2ab5ace41477e8667e5c75c9423862baea9d341915f0864"
+      },
+      "reports/m45_budget256_results.csv": {
+        "exists": true,
+        "bytes": 2188,
+        "sha256": "4df28942719fe85f7ad9c881490de93aa3a9908ba465e79564c897636721bb4d"
+      },
+      "reports/m45_bootstrap.json": {
+        "exists": true,
+        "bytes": 815,
+        "sha256": "c8f3faffa58005d0778b687e1235fe7e50cf8c1d75a2e173acf0002c55754827"
+      },
+      "reports/m45_efficiency.csv": {
+        "exists": true,
+        "bytes": 2190,
+        "sha256": "bcfa7ecaf15f26ebf5b6ab72e9eab2f716bfba9b159bc0172ed0c43df79deb90"
+      },
+      "reports/m45_api_usage_summary.json": {
+        "exists": true,
+        "bytes": 7954,
+        "sha256": "9076b3f9d23230b601e84fa1d2a70add4253ffe7bd53c5d59a7a35eb4c314b95"
+      },
+      "reports/m45_completion_checks.json": {
+        "exists": true,
+        "bytes": 537,
+        "sha256": "35d1e3507d310bc834a9cb6e489baff0f451a7a8a7c0c2ef0acf20fa97582929"
+      },
+      "reports/m45_f1_token_pareto.json": {
+        "exists": true,
+        "bytes": 897,
+        "sha256": "3e770c5ea2ef9bf249cafc9b8394c9ba12a83b0f2a0b3391e9ef06e40fa0833e"
+      },
+      "reports/m45_environment_pip_freeze.txt": {
+        "exists": true,
+        "bytes": 174,
+        "sha256": "ee724bf7900512fe215015cb2c694019d41b21fb9198cd9220154f7260b35667"
+      },
+      "evaluation/results/clean_v2_m45_gt406/m45_longllmlingua_natural.json": {
+        "exists": true,
+        "bytes": 2650782,
+        "sha256": "fc3714233f00b29cae16662b6e5f7b3c179ec95037f2e527c7fc9f5ac366a79a"
+      },
+      "evaluation/results/clean_v2_m45_gt406/m45_longllmlingua_budget_256.json": {
+        "exists": true,
+        "bytes": 2202333,
+        "sha256": "b8a84742e4a4c439cd98dc812336212ae523b75b7cc6c1133c2281b87371cb56"
+      }
+    }
+  },
+  "gpu_allocation": {
+    "status": "complete",
+    "completed_at_utc": "2026-08-15T09:59:50.885425+00:00",
+    "stage1_gpus": [
+      "4",
+      "5"
+    ],
+    "stage2_exit_gpus": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "stage2_longllmlingua_gpus": [
+      "7"
+    ],
+    "allocation_rule": "sustained-idle GPU expansion; five deterministic EXIT shards on GPUs 1-5 and one LongLLMLingua shard on GPU 7",
+    "preemption": false,
+    "exit_shards": 5,
+    "exit_shard_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "longllmlingua_shards": 1,
+    "longllmlingua_fail_closed_policy": "frozen 12-pass controller failures retain denominator with empty context; no extra pass and no post-hoc truncation",
+    "longllmlingua_failures": [
+      {
+        "id": "eval-007014",
+        "compression_failure": "hard cap unresolved after 12 passes: 262>256",
+        "compression_passes": 12,
+        "failed_candidate_qwen_tokens": 262,
+        "retained_tokens": 0,
+        "failed_candidate_was_sent_to_generator": false
+      },
+      {
+        "id": "eval-021029",
+        "compression_failure": "hard cap unresolved after 12 passes: 259>256",
+        "compression_passes": 12,
+        "failed_candidate_qwen_tokens": 259,
+        "retained_tokens": 0,
+        "failed_candidate_was_sent_to_generator": false
+      },
+      {
+        "id": "eval-004138",
+        "compression_failure": "hard cap unresolved after 12 passes: 261>256",
+        "compression_passes": 12,
+        "failed_candidate_qwen_tokens": 261,
+        "retained_tokens": 0,
+        "failed_candidate_was_sent_to_generator": false
+      }
+    ],
+    "exit_reshard_audit": "reports/m5_exit_reshard_audit.json",
+    "exit_live_reshard_audit": "reports/m5_exit_live_reshard_audit.json",
+    "scheduler_adaptation": "resource-only deterministic five-way reshard; 791 exact serialized partial rows reused; score/output invariant"
+  },
+  "no_new_efficiency_run": true
+}

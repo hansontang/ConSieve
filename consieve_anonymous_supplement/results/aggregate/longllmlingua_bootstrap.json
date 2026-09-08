@@ -1,0 +1,30 @@
+{
+  "schema_version": "m45_paired_bootstrap_v1",
+  "comparison": "DS-ModernBERT minus LongLLMLingua",
+  "scenario": "BM25@25",
+  "budget": 256,
+  "seed": 20260810,
+  "iterations": 10000,
+  "n_pairs": 406,
+  "evidence_recall": "N/A \u2014 no exact sentence mapping for LongLLMLingua",
+  "ds_raw": "evaluation/results/clean_v2_m4_gt406/m4_ds_modernbert_budget_256.json",
+  "baseline_raw": "evaluation/results/clean_v2_m45_gt406/m45_longllmlingua_budget_256.json",
+  "metrics": {
+    "f1": {
+      "difference": 0.2652325736880058,
+      "ci95": [
+        0.21798987544171933,
+        0.3132885683703531
+      ],
+      "p_two_sided": 0.0
+    },
+    "judge": {
+      "difference": 0.3103448275862069,
+      "ci95": [
+        0.25862068965517243,
+        0.3645320197044335
+      ],
+      "p_two_sided": 0.0
+    }
+  }
+}

@@ -1,0 +1,123 @@
+protocol_version: clean_v2_m4
+config_status: validation_frozen_m4
+random_seed: 20260810
+
+llm:
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/m4_llm_cache.db
+  api_audit:
+    enabled: true
+    log_dir: ./reports/api_usage
+    run_id: m4_generation
+    stage: answer_generation
+    metadata: {protocol: clean_v2_m4, milestone: M4, manifest: gt406}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    max_concurrency: 8
+    request_timeout: 120
+    max_retries: 0
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 128, temperature: 0.0, top_p: 1.0}
+
+judge:
+  run_during_eval: true
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/m4_judge_cache.db
+  prompt_version: clean_v2_yes_no_v1
+  model_version: null
+  api_audit:
+    enabled: true
+    log_dir: ./reports/api_usage
+    run_id: m4_judge
+    stage: llm_as_a_judge
+    metadata: {protocol: clean_v2_m4, milestone: M4, manifest: gt406}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    max_concurrency: 8
+    request_timeout: 60
+    max_retries: 0
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 8, temperature: 0.0}
+  batch_size: 5
+
+dataset:
+  qa_path: ./datasets/short_timed/timed_eval2_all.jsonl
+  manifest_path: ./manifests/gt406.json
+  gold_document_map_path: ./manifests/gold_document_ids_clean_v2.json
+  gold_document_map_split: evaluation
+  evidence_label_path: ./reports/evidence/gt406_evidence_labels_formal_406.jsonl
+  fields:
+    question: question
+    answers: answers
+    additional_answers: additional_answers
+    question_ts: question_timestamp
+    id: id
+    is_hard_negative: is_hard_negative
+    source: source
+    gt_context: context
+
+retrieval:
+  backend: pyserini
+  index_path: ./retrieval/indexes/clean_v2_wmt_timeqa_bm25
+  index_manifest: ./manifests/canonical_retrieval_index_v2.json
+  corpus_sha256: 6474cd67176a7e0d7d6de0db84403cf05fd27ce23762a9e30ff02f78e1984aed
+  index_sha256: b893b4efb8176f447b17e1caf5f28231b80ea34d8ac3c581169623c801b81e0a
+  bm25: {k1: 0.9, b: 0.4}
+  threads: 32
+  bm25_cache_path: ./evaluation/cache/clean_v2/canonical_bm25_cache.db
+
+token_accounting:
+  tokenizer_name: Qwen/Qwen3-4B-Instruct-2507
+  tokenizer_revision: cdbee75f17c01a7cc42f958dc650907174af0554
+
+matched_budget:
+  validation_manifest: ./manifests/m4_budget_validation256.json
+  validation_seed: 20260810
+  selection: per_query_hard_cap
+  budgets: [64, 128, 256, 512, 1024]
+  representative_budget: 256
+  frozen_selection_artifact: ./reports/m4_budget_selection.json
+  evaluation_set_used: false
+
+methods:
+  openprovence:
+    model: hotchpotch/open-provence-reranker-large-v1
+    revision: 85e9df2b483c8b40e2a03fe30a9efa0d67e360f7
+    threshold: 0.20
+  general_zilliz:
+    model: zilliz/semantic-highlight-bilingual-v1
+    revision: 6dfd9cbee6d9309201b4ff4b4bdd814e1c064491
+    threshold: 0.15
+  ds_modernbert:
+    model: anonymous/ts-highlighter-modernbert-timed-20260119_022815
+    revision: a6708dac479d19c5a10d87b3de14ea5c96f9a16e
+    threshold: 0.40
+  ds_zilliz:
+    model: anonymous/ts-highlighter-zilliz-timed-20260119_011422
+    revision: d4eef868acb3d1e9f0421d1c94576645e1b2a7e4
+    threshold: 0.40
+  exit:
+    repository: https://github.com/ThisIsHwang/EXIT
+    repository_commit: 4c0141a7f19c192f1be24a2c83e672078d6ba29b
+    base_model: google/gemma-2b-it
+    base_revision: 96988410cbdaeb8d5093d1ebdc5a8fb563e02bad
+    model: doubleyyh/exit-gemma-2b
+    revision: e286ce9096178a4aefb743d0919705250fdf1b23
+    threshold: 0.5
+    threshold_inclusive: true
+    overflow_policy: deterministic_sentence_boundary_chunking_with_exact_prompt_check_and_lossless_oversize_spacy_unit_subsegmentation
+
+prompts:
+  context_format: "Retrieved Document: {content}"
+  context_separator: "\n\n"
+  system: >-
+    You are a helpful assistant. Give the best answer informed by the retrieved
+    documents to the following question in a word, a phrase or a short sentence.
+    No need to explain your answer. Keep your response concise.
+  user: "{question}"

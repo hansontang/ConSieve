@@ -1,0 +1,450 @@
+{
+  "consieve": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.938763197586727,
+      "invalid_retention": 0.489894419306184,
+      "auroc": 0.8489637349312622,
+      "strict_pair_discrimination": 0.9182503770739064,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9408528198074277,
+      "invalid_retention": 0.4449793672627235,
+      "auroc": 0.858291598001245,
+      "strict_pair_discrimination": 0.9044016506189821,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9357249626307922,
+      "invalid_retention": 0.5844544095665172,
+      "auroc": 0.83073592203074,
+      "strict_pair_discrimination": 0.9312406576980568,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.938715953307393,
+      "invalid_retention": 0.5068093385214008,
+      "auroc": 0.8415106587533497,
+      "strict_pair_discrimination": 0.9202334630350194,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9329268292682927,
+      "invalid_retention": 0.39634146341463417,
+      "auroc": 0.8799821534800714,
+      "strict_pair_discrimination": 0.975609756097561,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9666666666666667,
+      "invalid_retention": 0.7444444444444445,
+      "auroc": 0.7592592592592593,
+      "strict_pair_discrimination": 0.8,
+      "ties": 0
+    }
+  },
+  "openprovence": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9438914027149321,
+      "invalid_retention": 0.5502262443438914,
+      "auroc": 0.821495237380252,
+      "strict_pair_discrimination": 0.9333333333333333,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9477303988995873,
+      "invalid_retention": 0.5226960110041265,
+      "auroc": 0.8307912148623822,
+      "strict_pair_discrimination": 0.9167812929848693,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9402092675635276,
+      "invalid_retention": 0.5799701046337817,
+      "auroc": 0.8137326532025803,
+      "strict_pair_discrimination": 0.9581464872944694,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9445525291828794,
+      "invalid_retention": 0.5768482490272373,
+      "auroc": 0.8113843510121274,
+      "strict_pair_discrimination": 0.938715953307393,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9207317073170732,
+      "invalid_retention": 0.5060975609756098,
+      "auroc": 0.8333209399167162,
+      "strict_pair_discrimination": 0.9451219512195121,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9777777777777777,
+      "invalid_retention": 0.7333333333333333,
+      "auroc": 0.7186419753086419,
+      "strict_pair_discrimination": 0.8111111111111111,
+      "ties": 0
+    }
+  },
+  "no_cf_seed42": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9378582202111614,
+      "invalid_retention": 0.5701357466063348,
+      "auroc": 0.7956315845748904,
+      "strict_pair_discrimination": 0.8965309200603319,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.937414030261348,
+      "invalid_retention": 0.49931224209078406,
+      "auroc": 0.8262328084173243,
+      "strict_pair_discrimination": 0.8961485557083907,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9342301943198804,
+      "invalid_retention": 0.7010463378176383,
+      "auroc": 0.7347914585944709,
+      "strict_pair_discrimination": 0.905829596412556,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9426070038910506,
+      "invalid_retention": 0.6070038910505836,
+      "auroc": 0.7812069448439795,
+      "strict_pair_discrimination": 0.8881322957198443,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.926829268292683,
+      "invalid_retention": 0.4329268292682927,
+      "auroc": 0.8474866151100535,
+      "strict_pair_discrimination": 0.9146341463414634,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9333333333333333,
+      "invalid_retention": 0.8,
+      "auroc": 0.7083950617283951,
+      "strict_pair_discrimination": 0.7888888888888889,
+      "ties": 0
+    }
+  },
+  "no_cf_seed43": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9360482654600302,
+      "invalid_retention": 0.5574660633484163,
+      "auroc": 0.8031317495091783,
+      "strict_pair_discrimination": 0.9200603318250377,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9353507565337001,
+      "invalid_retention": 0.48486932599724897,
+      "auroc": 0.8324368199285186,
+      "strict_pair_discrimination": 0.9174690508940853,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.929745889387145,
+      "invalid_retention": 0.6831091180866966,
+      "auroc": 0.7570655173261298,
+      "strict_pair_discrimination": 0.9342301943198804,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9426070038910506,
+      "invalid_retention": 0.6050583657587548,
+      "auroc": 0.7818570303865312,
+      "strict_pair_discrimination": 0.9105058365758755,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.926829268292683,
+      "invalid_retention": 0.3902439024390244,
+      "auroc": 0.8545880428316478,
+      "strict_pair_discrimination": 0.9451219512195121,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9333333333333333,
+      "invalid_retention": 0.7777777777777778,
+      "auroc": 0.7196296296296296,
+      "strict_pair_discrimination": 0.7888888888888889,
+      "ties": 0
+    }
+  },
+  "no_cf_seed44": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9363499245852187,
+      "invalid_retention": 0.5297134238310709,
+      "auroc": 0.8128426708889844,
+      "strict_pair_discrimination": 0.9227752639517346,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.937414030261348,
+      "invalid_retention": 0.4793672627235213,
+      "auroc": 0.8348449186326579,
+      "strict_pair_discrimination": 0.9140302613480055,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.929745889387145,
+      "invalid_retention": 0.6307922272047832,
+      "auroc": 0.7737135273180639,
+      "strict_pair_discrimination": 0.9372197309417041,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9426070038910506,
+      "invalid_retention": 0.5554474708171206,
+      "auroc": 0.799312820784569,
+      "strict_pair_discrimination": 0.9221789883268483,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9146341463414634,
+      "invalid_retention": 0.4024390243902439,
+      "auroc": 0.8522456870910172,
+      "strict_pair_discrimination": 0.9451219512195121,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9444444444444444,
+      "invalid_retention": 0.7777777777777778,
+      "auroc": 0.7227777777777777,
+      "strict_pair_discrimination": 0.8333333333333334,
+      "ties": 1
+    }
+  },
+  "allzero_cf_seed42": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9384615384615385,
+      "invalid_retention": 0.4205128205128205,
+      "auroc": 0.8691623840625704,
+      "strict_pair_discrimination": 0.9318250377073907,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9415405777166438,
+      "invalid_retention": 0.35488308115543327,
+      "auroc": 0.8858993546238711,
+      "strict_pair_discrimination": 0.9284731774415406,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9402092675635276,
+      "invalid_retention": 0.5769805680119582,
+      "auroc": 0.8307336876984366,
+      "strict_pair_discrimination": 0.9402092675635276,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.938715953307393,
+      "invalid_retention": 0.44260700389105057,
+      "auroc": 0.8598076806613272,
+      "strict_pair_discrimination": 0.9260700389105059,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9024390243902439,
+      "invalid_retention": 0.22560975609756098,
+      "auroc": 0.9229625223081499,
+      "strict_pair_discrimination": 0.9634146341463414,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9777777777777777,
+      "invalid_retention": 0.6777777777777778,
+      "auroc": 0.7753086419753087,
+      "strict_pair_discrimination": 0.7888888888888889,
+      "ties": 0
+    }
+  },
+  "allzero_cf_seed43": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9288084464555053,
+      "invalid_retention": 0.41297134238310707,
+      "auroc": 0.8618316578284638,
+      "strict_pair_discrimination": 0.92579185520362,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9325997248968363,
+      "invalid_retention": 0.33768913342503437,
+      "auroc": 0.8815202193257134,
+      "strict_pair_discrimination": 0.922971114167813,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9312406576980568,
+      "invalid_retention": 0.6023916292974589,
+      "auroc": 0.8098091656779747,
+      "strict_pair_discrimination": 0.922272047832586,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9250972762645915,
+      "invalid_retention": 0.4280155642023346,
+      "auroc": 0.8558901345970416,
+      "strict_pair_discrimination": 0.9241245136186771,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9085365853658537,
+      "invalid_retention": 0.21341463414634146,
+      "auroc": 0.9211406900654372,
+      "strict_pair_discrimination": 0.975609756097561,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9444444444444444,
+      "invalid_retention": 0.7,
+      "auroc": 0.7614814814814815,
+      "strict_pair_discrimination": 0.7666666666666667,
+      "ties": 0
+    }
+  },
+  "allzero_cf_seed44": {
+    "ALL": {
+      "n_pairs": 3315,
+      "n_contexts": 2366,
+      "qplus_recall": 0.9420814479638009,
+      "invalid_retention": 0.4546003016591252,
+      "auroc": 0.8636975764896979,
+      "strict_pair_discrimination": 0.930316742081448,
+      "ties": 0
+    },
+    "ENTITY_SWAP": {
+      "n_pairs": 1454,
+      "n_contexts": 1214,
+      "qplus_recall": 0.9477303988995873,
+      "invalid_retention": 0.37207702888583216,
+      "auroc": 0.8865000785198163,
+      "strict_pair_discrimination": 0.9284731774415406,
+      "ties": 0
+    },
+    "NEGATION": {
+      "n_pairs": 669,
+      "n_contexts": 567,
+      "qplus_recall": 0.9506726457399103,
+      "invalid_retention": 0.7040358744394619,
+      "auroc": 0.7908419187552088,
+      "strict_pair_discrimination": 0.929745889387145,
+      "ties": 0
+    },
+    "ANTONYM": {
+      "n_pairs": 1028,
+      "n_contexts": 872,
+      "qplus_recall": 0.9319066147859922,
+      "invalid_retention": 0.4455252918287938,
+      "auroc": 0.8657663250011355,
+      "strict_pair_discrimination": 0.9260700389105059,
+      "ties": 0
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "n_pairs": 164,
+      "n_contexts": 152,
+      "qplus_recall": 0.9207317073170732,
+      "invalid_retention": 0.22560975609756098,
+      "auroc": 0.9250074360499703,
+      "strict_pair_discrimination": 0.975609756097561,
+      "ties": 0
+    },
+    "MUTUAL_EXCLUSION_SECONDARY": {
+      "n_pairs": 90,
+      "n_contexts": 89,
+      "qplus_recall": 0.9555555555555556,
+      "invalid_retention": 0.6888888888888889,
+      "auroc": 0.7858024691358024,
+      "strict_pair_discrimination": 0.7888888888888889,
+      "ties": 0
+    }
+  }
+}

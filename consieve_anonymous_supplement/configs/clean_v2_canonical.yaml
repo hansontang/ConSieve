@@ -1,0 +1,163 @@
+# Immutable Milestone-1 canonical configuration.
+# Thresholds were selected once on manifests/validation_clean_v2.json and must
+# not be changed using GT406 results.
+protocol_version: clean_v2
+config_status: immutable_canonical_m1
+random_seed: 20260810
+
+llm:
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/canonical_llm_cache.db
+  api_audit:
+    enabled: true
+    log_dir: ./reports/api_usage
+    run_id: m1_canonical_generation
+    stage: answer_generation
+    metadata: {protocol: clean_v2, milestone: M1, manifest: gt406}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    # Execution-only scheduling: identical prompt/model/decoding for every
+    # method. SDK retries remain disabled and all provider failures are logged.
+    # Execution-only scheduling. Attempts 2-3 tested lower values (5 and 3),
+    # but immediate provider connection failures persisted while successful
+    # throughput fell. Canonical runs therefore retain 8 and explicitly rerun
+    # uncached failures; every attempt remains in the API audit logs.
+    max_concurrency: 8
+    request_timeout: 120
+    max_retries: 0
+    # Every retry is an outer, individually audited request; SDK retries stay 0.
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 128, temperature: 0.0, top_p: 1.0}
+
+judge:
+  # Restored after generation repair reached 8,120/8,120 cache entries; the
+  # formal judge therefore never evaluates provider-error placeholders.
+  run_during_eval: true
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/canonical_judge_cache.db
+  prompt_version: clean_v2_yes_no_v1
+  model_version: null
+  api_audit:
+    enabled: true
+    log_dir: ./reports/api_usage
+    run_id: m1_canonical_judge
+    stage: llm_as_a_judge
+    metadata: {protocol: clean_v2, milestone: M1, manifest: gt406}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    max_concurrency: 8
+    request_timeout: 60
+    max_retries: 0
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 8, temperature: 0.0}
+  batch_size: 5
+
+dataset:
+  qa_path: ./datasets/short_timed/timed_eval2_all.jsonl
+  manifest_path: ./manifests/gt406.json
+  gold_document_map_path: ./manifests/gold_document_ids_clean_v2.json
+  gold_document_map_split: evaluation
+  evidence_label_path: ./reports/evidence/gt406_evidence_labels_formal_406.jsonl
+  fields:
+    question: question
+    answers: answers
+    additional_answers: additional_answers
+    question_ts: question_timestamp
+    id: id
+    is_hard_negative: is_hard_negative
+    source: source
+    gt_context: context
+
+retrieval:
+  backend: pyserini
+  index_path: ./retrieval/indexes/clean_v2_wmt_timeqa_bm25
+  index_manifest: ./manifests/canonical_retrieval_index_v2.json
+  corpus_sha256: 6474cd67176a7e0d7d6de0db84403cf05fd27ce23762a9e30ff02f78e1984aed
+  index_sha256: b893b4efb8176f447b17e1caf5f28231b80ea34d8ac3c581169623c801b81e0a
+  bm25: {k1: 0.9, b: 0.4}
+  threads: 32
+  bm25_cache_path: ./evaluation/cache/clean_v2/canonical_bm25_cache.db
+
+highlighter:
+  enabled: true
+  cache_path: ./evaluation/cache/clean_v2/canonical_highlighter_cache.db
+  cache_write_interval: 50
+  threshold: null
+  threshold_status: validation_frozen_formal_2778
+  threshold_report_dir: ./reports/thresholds/formal_2778
+  thresholds:
+    hotchpotch/open-provence-reranker-large-v1: 0.20
+    anonymous/ts-highlighter-modernbert-timed-20260119_022815: 0.40
+    zilliz/semantic-highlight-bilingual-v1: 0.15
+    anonymous/ts-highlighter-zilliz-timed-20260119_011422: 0.40
+  threshold_selection:
+    validation_manifest: ./manifests/validation_clean_v2.json
+    evidence_labels: ./reports/thresholds/validation_labels_formal_2778.jsonl
+    objective: global_evidence_f1
+    grid: {min: 0.05, max: 0.80, step: 0.05}
+    tie_breaking: "global F1, positive recall, precision, lower threshold"
+    test_set_used: false
+  max_length: 4048
+  inference_batch_size: 4
+  use_fp16: true
+  models:
+    - hotchpotch/open-provence-reranker-large-v1
+    - anonymous/ts-highlighter-modernbert-timed-20260119_022815
+    - zilliz/semantic-highlight-bilingual-v1
+    - anonymous/ts-highlighter-zilliz-timed-20260119_011422
+  model_revisions:
+    hotchpotch/open-provence-reranker-large-v1: 85e9df2b483c8b40e2a03fe30a9efa0d67e360f7
+    anonymous/ts-highlighter-modernbert-timed-20260119_022815: a6708dac479d19c5a10d87b3de14ea5c96f9a16e
+    zilliz/semantic-highlight-bilingual-v1: 6dfd9cbee6d9309201b4ff4b4bdd814e1c064491
+    anonymous/ts-highlighter-zilliz-timed-20260119_011422: d4eef868acb3d1e9f0421d1c94576645e1b2a7e4
+
+token_accounting:
+  enabled: true
+  tokenizer_name: Qwen/Qwen3-4B-Instruct-2507
+  tokenizer_revision: cdbee75f17c01a7cc42f958dc650907174af0554
+
+prompts:
+  system: >-
+    You are a helpful assistant. Give the best answer informed by the retrieved
+    documents to the following question in a word, a phrase or a short sentence.
+    No need to explain your answer. Keep your response concise.
+  system_bare: >-
+    You are a helpful assistant. Answer the following question in a word, a
+    phrase or a short sentence. No need to explain your answer. Keep your
+    response concise.
+  user: "{question}"
+  context_format: "Retrieved Document: {content}"
+  context_separator: "\n\n"
+
+methods:
+  - name: full_context
+    retrieval: {type: ground_truth}
+  - name: gt_highlighter
+    retrieval: {type: ground_truth}
+    highlighter: true
+  - name: gt_noise4
+    retrieval: {type: ground_truth_noise, noise_k: 4}
+  - name: gt_noise4_highlighter
+    retrieval: {type: ground_truth_noise, noise_k: 4}
+    highlighter: true
+  - name: bm25_top5
+    retrieval: {type: bm25, top_k: 5}
+  - name: bm25_top5_highlighter
+    retrieval: {type: bm25, top_k: 5}
+    highlighter: true
+  - name: bm25_top25
+    retrieval: {type: bm25, top_k: 25}
+  - name: bm25_top25_highlighter
+    retrieval: {type: bm25, top_k: 25}
+    highlighter: true
+
+output:
+  dir: ./evaluation/results/clean_v2_canonical_gt406
+  save_predictions: true
+  save_metrics: true

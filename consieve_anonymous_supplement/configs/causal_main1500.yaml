@@ -1,0 +1,153 @@
+protocol_version: clean_v2_m5
+config_status: frozen_before_main1500_qa
+random_seed: 20260810
+
+dataset:
+  qa_path: ./datasets/short_timed/timed_eval2_all.jsonl
+  manifest_path: ./manifests/main1500.json
+  gold_document_map_path: ./manifests/gold_document_ids_clean_v2.json
+  gold_document_map_split: evaluation
+  evidence_label_path: null
+  fields:
+    question: question
+    answers: answers
+    additional_answers: additional_answers
+    question_ts: question_timestamp
+    id: id
+    is_hard_negative: is_hard_negative
+    source: source
+    gt_context: context
+
+retrieval:
+  backend: pyserini
+  index_path: ./retrieval/indexes/clean_v2_wmt_timeqa_bm25
+  index_manifest: ./manifests/canonical_retrieval_index_v2.json
+  corpus_sha256: 6474cd67176a7e0d7d6de0db84403cf05fd27ce23762a9e30ff02f78e1984aed
+  index_sha256: b893b4efb8176f447b17e1caf5f28231b80ea34d8ac3c581169623c801b81e0a
+  bm25: {k1: 0.9, b: 0.4}
+  top_k_materialized: 25
+  smaller_depths: exact ordered prefixes of top25
+  threads: 32
+  bm25_cache_path: ./evaluation/cache/clean_v2/canonical_bm25_cache.db
+
+token_accounting:
+  tokenizer_name: Qwen/Qwen3-4B-Instruct-2507
+  tokenizer_revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  context_format: "Retrieved Document: {content}"
+  context_separator: "\n\n"
+
+matched_budget:
+  selection: per_query_hard_cap
+  representative_budget: 256
+  frozen_selection_artifact: ./reports/m4_budget_selection.json
+  evaluation_set_used: false
+
+methods:
+  raw_bm25:
+    operating_point: full ordered top25 documents
+  openprovence:
+    model: hotchpotch/open-provence-reranker-large-v1
+    revision: 85e9df2b483c8b40e2a03fe30a9efa0d67e360f7
+    threshold: 0.20
+  ds_modernbert:
+    model: anonymous/ts-highlighter-modernbert-timed-20260119_022815
+    revision: a6708dac479d19c5a10d87b3de14ea5c96f9a16e
+    threshold: 0.40
+  exit:
+    repository: https://github.com/ThisIsHwang/EXIT
+    repository_commit: 4c0141a7f19c192f1be24a2c83e672078d6ba29b
+    base_model: google/gemma-2b-it
+    base_revision: 96988410cbdaeb8d5093d1ebdc5a8fb563e02bad
+    model: doubleyyh/exit-gemma-2b
+    revision: e286ce9096178a4aefb743d0919705250fdf1b23
+    threshold: 0.5
+    threshold_inclusive: true
+    overflow_policy: deterministic_sentence_boundary_chunking_with_exact_prompt_check_and_lossless_oversize_spacy_unit_subsegmentation
+  longllmlingua:
+    repository: https://github.com/microsoft/LLMLingua
+    repository_commit: e0e9d99beb94098bbd924aa53c2c112eac41c758
+    package_version: 0.2.2
+    model: NousResearch/Llama-2-7b-hf
+    model_revision: 8efe6c9b93655b934e27bd9981e3ec13e55aee9d
+    max_position_embeddings: 4096
+    condition_compare: true
+    condition_in_question: after
+    rank_method: longllmlingua
+    use_context_level_filter: true
+    use_sentence_level_filter: false
+    use_token_level_filter: true
+    context_budget: "+100"
+    dynamic_context_compression_ratio: 0.4
+    reorder_context: sort
+    iterative_size: 200
+    concate_question: false
+    natural_target_token: 500
+    long_input_adaptation: deterministic_lossless_character_span_fragmentation_frozen_in_m45
+    matched_256:
+      initial_internal_target: 256
+      qwen_hard_cap: 256
+      max_passes: 12
+      update_rule: max(1, min(previous_target-1, floor(previous_target*256/qwen_output_tokens)-4))
+      posthoc_truncation: prohibited
+
+llm:
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/m5_llm_cache.db
+  api_audit:
+    enabled: true
+    log_dir: ./paper_rewrite/phase10_25/results/api_usage
+    run_id: m5_generation
+    stage: answer_generation
+    metadata: {protocol: clean_v2_m5, milestone: Phase10.25, manifest: main1500, comparison: formal_clean_causal}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    max_concurrency: 8
+    request_timeout: 120
+    max_retries: 0
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 128, temperature: 0.0, top_p: 1.0}
+
+judge:
+  run_during_eval: true
+  mode: qwen
+  cache_path: ./evaluation/cache/clean_v2/m5_judge_cache.db
+  prompt_version: clean_v2_yes_no_v1
+  model_version: null
+  api_audit:
+    enabled: true
+    log_dir: ./paper_rewrite/phase10_25/results/api_usage
+    run_id: m5_judge
+    stage: llm_as_a_judge
+    metadata: {protocol: clean_v2_m5, milestone: Phase10.25, manifest: main1500, comparison: formal_clean_causal}
+  qwen:
+    api_key: "${QWEN_API_KEY}"
+    model_name: qwen-plus
+    max_concurrency: 8
+    request_timeout: 60
+    max_retries: 0
+    explicit_retries: 4
+    retry_backoff_seconds: 0.5
+    request_spacing_seconds: 0
+  sampling: {max_tokens: 8, temperature: 0.0}
+  batch_size: 5
+
+prompts:
+  context_format: "Retrieved Document: {content}"
+  context_separator: "\n\n"
+  system: >-
+    You are a helpful assistant. Give the best answer informed by the retrieved
+    documents to the following question in a word, a phrase or a short sentence.
+    No need to explain your answer. Keep your response concise.
+  user: "{question}"
+
+statistics:
+  paired_bootstrap_resamples: 10000
+  paired_bootstrap_seed: 20260810
+
+formal_scenarios:
+  natural_bm25_top25: [raw_bm25, openprovence, ds_modernbert, exit, longllmlingua]
+  matched_bm25_top25_budget256: [openprovence, ds_modernbert, exit, longllmlingua]
+  source_breakdowns: [all, streamingqa, timeqa]

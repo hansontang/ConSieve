@@ -1,0 +1,73 @@
+{
+  "generator": {
+    "mode": "qwen",
+    "cache_path": "./evaluation/cache/clean_v2/m5_llm_cache.db",
+    "api_audit": {
+      "enabled": true,
+      "log_dir": "./reports/api_usage",
+      "run_id": "m5_generation",
+      "stage": "answer_generation",
+      "metadata": {
+        "protocol": "clean_v2_m5",
+        "milestone": "M5",
+        "manifest": "main1500"
+      }
+    },
+    "qwen": {
+      "api_key": "${QWEN_API_KEY}",
+      "model_name": "qwen-plus",
+      "max_concurrency": 8,
+      "request_timeout": 120,
+      "max_retries": 0,
+      "explicit_retries": 4,
+      "retry_backoff_seconds": 0.5,
+      "request_spacing_seconds": 0
+    },
+    "sampling": {
+      "max_tokens": 128,
+      "temperature": 0.0,
+      "top_p": 1.0
+    }
+  },
+  "judge": {
+    "run_during_eval": true,
+    "mode": "qwen",
+    "cache_path": "./evaluation/cache/clean_v2/m5_judge_cache.db",
+    "prompt_version": "clean_v2_yes_no_v1",
+    "model_version": null,
+    "api_audit": {
+      "enabled": true,
+      "log_dir": "./reports/api_usage",
+      "run_id": "m5_judge",
+      "stage": "llm_as_a_judge",
+      "metadata": {
+        "protocol": "clean_v2_m5",
+        "milestone": "M5",
+        "manifest": "main1500"
+      }
+    },
+    "qwen": {
+      "api_key": "${QWEN_API_KEY}",
+      "model_name": "qwen-plus",
+      "max_concurrency": 8,
+      "request_timeout": 60,
+      "max_retries": 0,
+      "explicit_retries": 4,
+      "retry_backoff_seconds": 0.5,
+      "request_spacing_seconds": 0
+    },
+    "sampling": {
+      "max_tokens": 8,
+      "temperature": 0.0
+    },
+    "batch_size": 5
+  },
+  "retry_and_denominator_policy": {
+    "generation_explicit_retries": 4,
+    "judge_explicit_retries": 4,
+    "fail_closed_expected_ids": 1500,
+    "failed_requests_retained_in_denominator": true,
+    "silent_drop_prohibited": true,
+    "api_metadata_and_payload_logging": true
+  }
+}

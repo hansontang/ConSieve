@@ -1,0 +1,107 @@
+{
+  "schema_version": "phase10_25_squad_confirm_bootstrap/1.0",
+  "resampling_unit": "context_id_official_paragraph",
+  "draws": 10000,
+  "seed": 20260810,
+  "canonical": {
+    "ALL": {
+      "contrast": "OpenProvence invalid retention minus canonical ConSieve invalid retention",
+      "point_effect": 0.060331825037707454,
+      "ci95_low": 0.044291927547340654,
+      "ci95_high": 0.076554673648484,
+      "contexts": 2366
+    },
+    "ENTITY_SWAP": {
+      "contrast": "OpenProvence invalid retention minus canonical ConSieve invalid retention",
+      "point_effect": 0.07771664374140302,
+      "ci95_low": 0.05375546522527239,
+      "ci95_high": 0.10171821305841922,
+      "contexts": 1214
+    },
+    "NEGATION": {
+      "contrast": "OpenProvence invalid retention minus canonical ConSieve invalid retention",
+      "point_effect": -0.004484304932735439,
+      "ci95_low": -0.04142165242165241,
+      "ci95_high": 0.03196380216629494,
+      "contexts": 567
+    },
+    "ANTONYM": {
+      "contrast": "OpenProvence invalid retention minus canonical ConSieve invalid retention",
+      "point_effect": 0.07003891050583655,
+      "ci95_low": 0.041869522882181154,
+      "ci95_high": 0.09961549260622701,
+      "contexts": 872
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "contrast": "OpenProvence invalid retention minus canonical ConSieve invalid retention",
+      "point_effect": 0.1097560975609756,
+      "ci95_low": 0.04938271604938271,
+      "ci95_high": 0.17073170731707316,
+      "contexts": 152
+    }
+  },
+  "clean_hierarchical": {
+    "ALL": {
+      "contrast": "No-CF invalid retention minus AllZero-CF invalid retention",
+      "point_effect": 0.12307692307692308,
+      "ci95_low": 0.07694008509752155,
+      "ci95_high": 0.15296391393855083,
+      "contexts": 2366,
+      "individual_seed_effects": {
+        "42": 0.1496229260935143,
+        "43": 0.14449472096530924,
+        "44": 0.07511312217194571
+      }
+    },
+    "ENTITY_SWAP": {
+      "contrast": "No-CF invalid retention minus AllZero-CF invalid retention",
+      "point_effect": 0.13296652911508486,
+      "ci95_low": 0.10756978426418481,
+      "ci95_high": 0.15464181128625354,
+      "contexts": 1214,
+      "individual_seed_effects": {
+        "42": 0.1444291609353508,
+        "43": 0.1471801925722146,
+        "44": 0.10729023383768915
+      }
+    },
+    "NEGATION": {
+      "contrast": "No-CF invalid retention minus AllZero-CF invalid retention",
+      "point_effect": 0.04384653712007969,
+      "ci95_low": -0.06997312855175203,
+      "ci95_high": 0.12349150534189435,
+      "contexts": 567,
+      "individual_seed_effects": {
+        "42": 0.12406576980568007,
+        "43": 0.08071748878923768,
+        "44": -0.07324364723467869
+      }
+    },
+    "ANTONYM": {
+      "contrast": "No-CF invalid retention minus AllZero-CF invalid retention",
+      "point_effect": 0.1504539559014267,
+      "ci95_low": 0.11220546698124757,
+      "ci95_high": 0.1816437561515038,
+      "contexts": 872,
+      "individual_seed_effects": {
+        "42": 0.16439688715953304,
+        "43": 0.17704280155642022,
+        "44": 0.10992217898832685
+      }
+    },
+    "NUMBER_SWAP_NON_TEMPORAL": {
+      "contrast": "No-CF invalid retention minus AllZero-CF invalid retention",
+      "point_effect": 0.1869918699186992,
+      "ci95_low": 0.14476171386911288,
+      "ci95_high": 0.23054450477841296,
+      "contexts": 152,
+      "individual_seed_effects": {
+        "42": 0.2073170731707317,
+        "43": 0.17682926829268295,
+        "44": 0.17682926829268295
+      }
+    }
+  },
+  "roc_curves": "${CONSIEVE_ROOT}/paper_rewrite/phase10_25/results/SQUAD_CONFIRM_ROC_CURVES.json",
+  "roc_curves_sha256": "2c86280c20b197f83a96800d9cd4913787d5d54baf1d369e8ee7751b45a594ac"
+}
